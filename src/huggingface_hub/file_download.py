@@ -300,7 +300,7 @@ def _request_wrapper(
         return response
 
     # Perform request and return if status_code is not in the retry list.
-    response = get_session().request(method=method, url=url, **params)
+    response = get_session().request(method=method, url=url, **params, verify=False)
     hf_raise_for_status(response)
     return response
 
